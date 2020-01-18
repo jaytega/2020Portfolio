@@ -54,8 +54,8 @@ var http = require('http');
 /Creating a server and listening to port 3000 and local ip
 /will log to console requests to server regardless of directory...
 /ALso piping res steram in myReadStream to serve the index.html
-/
-*/
+/this method chunks data giving quicker response times to users
+
 
 var server = http.createServer(function(req,res){
   console.log('request was made: ' + req.url);
@@ -65,6 +65,26 @@ var server = http.createServer(function(req,res){
   //pipe the readstream to response bit by bit (chunking)
   myReadStream.pipe(res);
   //this also ends the response
+});
+
+server.listen(3000,'127.0.0.1');
+console.log('Port 3000 being listened too');
+
+*/
+/*
+/this method writes directly without chunking
+/creating a server to serve json
+*/
+
+var server = http.createServer(function(req,res){
+  console.log('request was made: ' + req.url);
+  res.writeHead(200, {'Content-Type': 'application/json'});
+  var jsonObj = {
+    name: 'Jason',
+    job: 'Software Development',
+    age: 30
+  };
+  res.end(JSON.stringify(jsonObj));
 });
 
 server.listen(3000,'127.0.0.1');
