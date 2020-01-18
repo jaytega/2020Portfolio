@@ -46,4 +46,26 @@ ah.emit('speak', 'My favorite food is ' + ah.food);
 /
 */
 
-var fs = require('fs')
+var fs = require('fs');
+
+var http = require('http');
+/*
+/
+/Creating a server and listening to port 3000 and local ip
+/will log to console requests to server regardless of directory
+/ALso piping res steram in myReadStream to serve the index.html
+/
+*/
+
+var server = http.createServer(function(req,res){
+  console.log('request was made: ' + req.url);
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  //create a read stream that uses the directory name and .txt object and reads it in utf8
+  var myReadStream = fs.createReadStream('./exports/index.html', 'utf8');
+  //pipe the readstream to response bit by bit (chunking)
+  myReadStream.pipe(res);
+  //this also ends the response
+});
+
+server.listen(3000,'127.0.0.1');
+console.log('Port 3000 being listened too');
