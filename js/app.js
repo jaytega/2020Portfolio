@@ -52,7 +52,7 @@ var http = require('http');
 /*
 /
 /Creating a server and listening to port 3000 and local ip
-/will log to console requests to server regardless of directory
+/will log to console requests to server regardless of directory...
 /ALso piping res steram in myReadStream to serve the index.html
 /
 */
