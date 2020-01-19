@@ -76,15 +76,26 @@ console.log('Port 3000 being listened too');
 /creating a server to serve json
 */
 
+//create a server variable and use http object to create create
+//server with a request(req) & response(res) paramater list
 var server = http.createServer(function(req,res){
+  //req.url will be the users requested url
+  //we log the request for testing and debugging purposes
   console.log('request was made: ' + req.url);
-  res.writeHead(200, {'Content-Type': 'application/json'});
-  var jsonObj = {
-    name: 'Jason',
-    job: 'Software Development',
-    age: 30
-  };
-  res.end(JSON.stringify(jsonObj));
+  //setting up conditionals to route user
+  //to their requested directory if it exists
+  if(req.url === '/home' || req.url === '/'){
+    //right to the head of the response object the content type
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    //stream the proper file in the res paramater and through a pipe()
+    fs.createReadStream('./exports/index.html').pipe(res);
+  }
+  //after all route options, here is the 404
+  else{
+    res.writeHead(404, {'Content-Type': 'text/html'});
+    fs.createReadStream('./exports/404.html').pipe(res);
+  }
+
 });
 
 server.listen(3000,'127.0.0.1');
