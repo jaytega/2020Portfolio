@@ -1,0 +1,36 @@
+{
+
+
+  "name": "2020-portfolio",
+  "version": "1.0.0",
+  "description": "a WiP project to build a variety portfolio using git, jQuery, Node.js, Express,  HTML, CSS, XML, Bootstrap/Studio, & MongoDB",
+  "main": "js/app.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaytega/2020Portfolio.git"
+  },
+  "keywords": [
+    "jason",
+    "ortega",
+    "portfolio",
+    "software",
+    "development",
+    "ui",
+    "design",
+    "graphic",
+    "design"
+  ],
+  "author": "Jason Ortega",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaytega/2020Portfolio/issues"
+  },
+  "homepage": "https://github.com/jaytega/2020Portfolio#readme"
+}
