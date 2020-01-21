@@ -3,6 +3,7 @@ a WiP project to build a variety portfolio using
 [] jQuery
 [] Node.js
 [] Express
+[] Mongoose
 [] ejs template engine
 [] HTML
 [] CSS
