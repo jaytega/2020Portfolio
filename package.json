@@ -6,7 +6,7 @@
   "description": "a WiP project to build a variety portfolio using git, jQuery, Node.js, Express,  HTML, CSS, XML, Bootstrap/Studio, & MongoDB",
   "main": "js/app.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {},
   "scripts": {
